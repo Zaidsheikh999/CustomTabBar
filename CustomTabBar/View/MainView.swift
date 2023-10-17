@@ -15,7 +15,7 @@ struct Screen: Identifiable {
     var tag: Int
 }
 
-struct TabView: View {
+struct MainView: View {
     @Environment(\.safeAreaInsets) private var safeAreaInsets
     @State var activeScreen: Int = 0;
     
@@ -64,7 +64,7 @@ struct TabView: View {
                                 
                                 if isActive {
                                     Text(screen.label)
-                                        .font(.subheadline)
+                                        .font(.system(size: 12))
                                         .padding(.leading, 6)
                                         .foregroundColor(.white)
                                         .bold()
@@ -99,9 +99,9 @@ struct TabView: View {
     }
 }
 
-struct TabView_Previews: PreviewProvider {
+struct MainView_Previews: PreviewProvider {
     static var previews: some View {
-        TabView()
+        MainView()
     }
 }
 
